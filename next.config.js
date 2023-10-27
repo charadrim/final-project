@@ -6,3 +6,8 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+module.exports = {
+  // Other Next.js config options
+  serverActions: true,
+};
