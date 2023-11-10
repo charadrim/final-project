@@ -28,7 +28,7 @@ export default function RootLayout({
             </div>
             <div className={styles.leftLinks}>
               <Link href="/login">Log In</Link>
-              <Link href="/createaccount">Create Account</Link>
+              <Link href="/register">Register</Link>
             </div>
           </div>
         </nav>

@@ -1,13 +1,14 @@
 'use client';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import styles from '../page.module.css';
 
 export default function LogIn() {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
+    await Promise.resolve();
   };
 
   return (

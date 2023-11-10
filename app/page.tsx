@@ -4,92 +4,48 @@ import styles from './page.module.css';
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        {/* <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p> */}
-        {/* <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div> */}
+      <div className={styles.container}>
+        <div className={styles.centeredText}></div>
+        Welcome to our all-in-one meal tracking and planning website, where your
+        culinary journey begins! Whether you're a fitness enthusiast, a
+        nutrition-conscious individual, or someone who simply enjoys good food,
+        our platform is designed to make it easier than ever to track and plan
+        your daily meals. <br /> <br />
+        A World of Culinary Possibilities At our website, we understand that
+        food is an essential part of our lives. It's not just about sustenance;
+        it's an art, a source of joy, and a means to stay healthy. Our platform
+        offers you the opportunity to explore a world of culinary possibilities.
+        Whether you're cooking at home or dining out, you can effortlessly
+        record and plan your meals.
+        <br /> <br />
+        Track Your Daily Nutrition Are you curious about the nutritional value
+        of your meals? With our intuitive meal tracking feature, you can log the
+        details of what you eat, including ingredients, portion sizes, and
+        preparation methods. Our platform then calculates the nutritional
+        information, such as calories, protein, carbohydrates, and more, giving
+        you valuable insights into your daily intake.
+        <br /> <br />
+        Personalized Meal Planning Planning your meals in advance is a key to a
+        healthy lifestyle. Our website provides tools for creating personalized
+        meal plans. You can set dietary goals, create weekly or monthly meal
+        schedules, and ensure you're meeting your nutritional targets.
+        <br /> <br />
+        User-Friendly and Intuitive We believe that technology should simplify
+        your life, not complicate it. Our website is designed with a
+        user-friendly and intuitive interface. You don't need to be a tech
+        expert to navigate it. It's as easy as logging in, recording your meals,
+        and accessing your meal history.
+        <br /> <br />
+        Community and Support Meal tracking and planning can be a challenging
+        endeavor, but you don't have to do it alone. Our website features a
+        supportive community where you can connect with like-minded individuals,
+        share recipes, and find inspiration for your culinary adventures.
+        <br /> <br />
+        Get Started Today Embark on a journey to a healthier, happier you with
+        our meal tracking and planning website. It's time to take control of
+        your nutrition, savor delicious meals, and make informed choices. Join
+        our community today and start your culinary adventure!
       </div>
-      {/*
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div> */}
-
-      {/* <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div> */}
     </main>
   );
 }

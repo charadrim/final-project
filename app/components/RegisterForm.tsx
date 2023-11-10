@@ -1,21 +1,39 @@
 'use client';
+
 import { useState } from 'react';
 import styles from '../page.module.css';
 
-export default function CreateAccount() {
+export default function RegisterForm() {
   const [email, setEmail] = useState('');
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-  };
+  // const handleRegister = async (e: FormEvent) => {
+  //   e.preventDefault();
+  //   await Promise.resolve();
+  // };
+
+  async function handleRegister(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const response = await fetch('/api/register', {
+      method: 'POST',
+      body: JSON.stringify({
+        email,
+        userName,
+        password,
+      }),
+    });
+    const data = response.json();
+
+    console.log('Check: ', data);
+  }
 
   return (
     <div>
-      <h1 className={styles.heading}>Create an account</h1>
+      <h1 className={styles.heading}>Register</h1>
       <div className={styles.container}>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={async (event) => await handleRegister(event)}>
           <label>
             {' '}
             Email:
@@ -24,7 +42,7 @@ export default function CreateAccount() {
               type="email"
               placeholder="Email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(event) => setEmail(event.currentTarget.value)}
             />
           </label>
           <br />
@@ -36,7 +54,7 @@ export default function CreateAccount() {
               type="username"
               placeholder="Username"
               value={userName}
-              onChange={(e) => setUserName(e.target.value)}
+              onChange={(event) => setUserName(event.currentTarget.value)}
             />
           </label>
           <br />
@@ -49,11 +67,11 @@ export default function CreateAccount() {
               type="password"
               placeholder="Password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(event) => setPassword(event.currentTarget.value)}
             />
           </label>
           <br />
-          <button className={styles.submitButton}>Create Account</button>
+          <button className={styles.submitButton}>Register</button>
         </form>
       </div>
     </div>

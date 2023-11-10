@@ -6,29 +6,39 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "ley --require tsm "
   },
   "dependencies": {
     "@fullcalendar/daygrid": "^6.1.9",
     "@fullcalendar/react": "^6.1.9",
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.3.1",
     "fullcalendar": "^6.1.9",
     "ley": "^0.8.1",
+    "migrate": "^2.0.0",
+    "moment": "^2.29.4",
     "next": "13.5.6",
     "pg": "^8.11.3",
     "postgres": "^3.4.1",
     "react": "^18",
+    "react-big-calendar": "^1.8.5",
     "react-dom": "^18",
     "sass": "^1.69.4",
-    "sharp": "^0.32.6"
+    "server-only": "^0.0.1",
+    "sharp": "^0.32.6",
+    "tsm": "^2.3.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
+    "@types/react-big-calendar": "^1.8.3",
     "@types/react-dom": "^18",
     "eslint-config-upleveled": "^5.1.1",
     "stylelint": "^15.11.0",
     "stylelint-config-upleveled": "^1.0.2",
-    "typescript": "^5"
+    "typescript": "^5.2.2"
   }
 }

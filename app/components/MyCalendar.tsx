@@ -21,6 +21,7 @@ export default function MyCalendar() {
         plugins={[dayGridPlugin]}
         initialView="dayGridMonth"
         events={events}
+        height="630px"
       />
     </div>
   );
