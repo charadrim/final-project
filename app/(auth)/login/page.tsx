@@ -1,5 +1,5 @@
 import '../../page.module.css';
-import LogIn from '../../components/LogIn';
+import LogIn from './LogIn';
 
 export default function LogInPage() {
   return (

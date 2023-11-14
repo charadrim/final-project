@@ -1,12 +1,16 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import styles from '../page.module.css';
+import { RegisterResponseBodyPost } from '../../api/(auth)/register/route';
+import styles from '../../page.module.css';
 
 export default function RegisterForm() {
   const [email, setEmail] = useState('');
-  const [userName, setUserName] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState<{ message: string }[]>([]);
+  const router = useRouter();
 
   // const handleRegister = async (e: FormEvent) => {
   //   e.preventDefault();
@@ -20,13 +24,20 @@ export default function RegisterForm() {
       method: 'POST',
       body: JSON.stringify({
         email,
-        userName,
+        username,
         password,
       }),
     });
-    const data = response.json();
+    const data: RegisterResponseBodyPost = await response.json();
 
-    console.log('Check: ', data);
+    if ('errors' in data) {
+      setErrors(data.errors);
+      return;
+    }
+
+    router.push('/');
+
+    // console.log('Check: ', data);
   }
 
   return (
@@ -53,8 +64,8 @@ export default function RegisterForm() {
               className={styles.inputField}
               type="username"
               placeholder="Username"
-              value={userName}
-              onChange={(event) => setUserName(event.currentTarget.value)}
+              value={username}
+              onChange={(event) => setUsername(event.currentTarget.value)}
             />
           </label>
           <br />
@@ -72,8 +83,15 @@ export default function RegisterForm() {
           </label>
           <br />
           <button className={styles.submitButton}>Register</button>
+          {errors.map((error) => (
+            <div key={`error-${error.message}`}>Error: {error.message}</div>
+          ))}
         </form>
       </div>
     </div>
   );
 }
+
+// export default function RegisterForm() {
+//   return <div>registration</div>;
+// }

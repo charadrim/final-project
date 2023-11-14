@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav>
+        <nav className={styles.fixedNav}>
           <div>
             <div className={styles.divLinks}>
               <Link href="/">Home</Link>
