@@ -3,7 +3,7 @@ type Props = {
 };
 
 export default function UserProfilePage({ params }: Props) {
-  // console.log('Check:', params);
+  console.log('Check:', params);
   return (
     <div>
       <h1>You are currently logged-in</h1>

@@ -12,7 +12,7 @@ export const createUser = cache(
     INSERT INTO users
       (email, username, password_hash)
     VALUES
-      (${email}, ${username}, ${passwordHash})
+      (${email}, ${username.toLowerCase()}, ${passwordHash})
     RETURNING
     id,
     email,
@@ -32,7 +32,7 @@ export const getUserByUsername = cache(async (username: string) => {
   FROM
   users
   WHERE
-  username = ${username}
+  username = ${username.toLowerCase()}
   `;
   return user;
 });
@@ -41,13 +41,11 @@ export const getUserWithPasswordHashByUsername = cache(
   async (username: string) => {
     const [user] = await sql<UserWithPasswordHash[]>`
       SELECT
-        id,
-        username,
-        password_hash
+        *
       FROM
         users
       WHERE
-        username = ${username}
+        username = ${username.toLowerCase()}
     `;
     return user;
   },

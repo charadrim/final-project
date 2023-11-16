@@ -1,10 +1,12 @@
 import '../../page.module.css';
-import LogIn from './LogIn';
+import LoginForm from './LoginForm';
 
-export default function LogInPage() {
+type Props = { searchParams: { returnTo?: string | string[] } };
+
+export default function LogInPage({ searchParams }: Props) {
   return (
     <div>
-      <LogIn />
+      <LoginForm returnTo={searchParams.returnTo} />
     </div>
   );
 }

@@ -2,61 +2,52 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { RegisterResponseBodyPost } from '../../api/(auth)/register/route';
+import { getSafeReturnToPath } from '../../../util/validation';
+import { LoginResponseBodyPost } from '../../api/(auth)/login/route';
 import styles from '../../page.module.css';
 
-export default function RegisterForm() {
-  const [email, setEmail] = useState('');
+type Props = { returnTo?: string | string[] };
+
+export default function LoginForm(props: Props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<{ message: string }[]>([]);
   const router = useRouter();
 
-  // const handleRegister = async (e: FormEvent) => {
-  //   e.preventDefault();
-  //   await Promise.resolve();
-  // };
-
   async function handleRegister(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const response = await fetch('/api/register', {
+    const response = await fetch('/api/login', {
       method: 'POST',
       body: JSON.stringify({
-        email,
         username,
         password,
       }),
     });
-    const data: RegisterResponseBodyPost = await response.json();
+
+    const data: LoginResponseBodyPost = await response.json();
 
     if ('errors' in data) {
       setErrors(data.errors);
       return;
     }
+    // This way is not secure to do returnTo
+    // if (props.returnTo) {
+    //   router.push(props.returnTo);
+    // }
 
-    router.push(`/profile/${data.user.username}`);
+    router.push(
+      getSafeReturnToPath(props.returnTo) || `/profile/${data.user.username}`,
+    );
 
     // console.log('Check: ', data);
   }
 
   return (
     <div>
-      <h1 className={styles.heading}>Register</h1>
+      <h1 className={styles.heading}>Log in</h1>
       <div className={styles.container}>
         <form onSubmit={async (event) => await handleRegister(event)}>
-          <label>
-            {' '}
-            Email:
-            <input
-              className={styles.inputField}
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(event) => setEmail(event.currentTarget.value)}
-            />
-          </label>
-          <br />
           <label>
             {' '}
             Username:
@@ -82,7 +73,7 @@ export default function RegisterForm() {
             />
           </label>
           <br />
-          <button className={styles.submitButton}>Register</button>
+          <button className={styles.submitButton}>Log in</button>
           {errors.map((error) => (
             <div className="error" key={`error-${error.message}`}>
               Error: {error.message}

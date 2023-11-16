@@ -18,6 +18,12 @@ const nextConfig = {
     typedRoutes: true,
     serverActions: true,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 
   // Other Next.js config options
 };

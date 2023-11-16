@@ -1,4 +1,4 @@
-import './globals.css';
+import './globals.scss';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
@@ -24,7 +24,7 @@ export default function RootLayout({
             <div className={styles.divLinks}>
               <Link href="/">Home</Link>
               <Link href="/recipes">Recipes</Link>
-              <Link href="/myaccount">My Account</Link>
+              <Link href="/myaccount">Profile</Link>
             </div>
             <div className={styles.leftLinks}>
               <Link href="/login">Log In</Link>
@@ -32,7 +32,7 @@ export default function RootLayout({
             </div>
           </div>
         </nav>
-        <div className={styles.backgroundImage}>{children}</div>
+        <div>{children}</div>
       </body>
     </html>
   );
