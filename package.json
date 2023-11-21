@@ -16,7 +16,6 @@
     "bcrypt": "^5.1.1",
     "dotenv": "^16.3.1",
     "fullcalendar": "^6.1.9",
-    "ley": "^0.8.1",
     "migrate": "^2.0.0",
     "moment": "^2.29.4",
     "next": "13.5.6",
@@ -37,6 +36,7 @@
     "@types/react-big-calendar": "^1.8.3",
     "@types/react-dom": "^18",
     "eslint-config-upleveled": "^5.1.1",
+    "ley": "^0.8.1",
     "stylelint": "^15.11.0",
     "stylelint-config-upleveled": "^1.0.2",
     "typescript": "^5.2.2"

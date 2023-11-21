@@ -2,6 +2,7 @@ import './globals.scss';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
+import LogoutButton from './(auth)/logout/LogoutButton';
 import styles from './page.module.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -24,11 +25,12 @@ export default function RootLayout({
             <div className={styles.divLinks}>
               <Link href="/">Home</Link>
               <Link href="/recipes">Recipes</Link>
-              <Link href="/myaccount">Profile</Link>
+              <Link href="/recipes-admin">My Account</Link>
             </div>
             <div className={styles.leftLinks}>
               <Link href="/login">Log In</Link>
               <Link href="/register">Register</Link>
+              <LogoutButton />
             </div>
           </div>
         </nav>
