@@ -37,6 +37,9 @@ export default function RecipePage(props: GenerateMetadataProps) {
             data-test-id="recipe-image"
           />
           <h1>{singleRecipe.title}</h1>
+          <p>Description: {singleRecipe.description}</p>
+          <p>Ingredients: {singleRecipe.ingredients}</p>
+          <p>Instructions: {singleRecipe.instructions}</p>
         </div>
       </a>
     </div>
