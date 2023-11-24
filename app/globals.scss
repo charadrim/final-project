@@ -114,6 +114,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 @import '~@fortawesome/fontawesome-free/css/all.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Lato:ital,wght@1,400;1,900&family=Quicksand:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Lato:ital,wght@1,400;1,900&family=Quicksand:wght@600&family=Roboto:wght@700&display=swap');
 *,
 ::before,
 ::after {
@@ -132,8 +134,8 @@
 
 body {
   margin: 0;
-  background-color: #f9f9f9;
-  padding: 16px;
+  background-color: rgb(242, 247, 250);
+  padding: 0px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -147,12 +149,19 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montserrat', sans-serif;
-  color: #2f4858;
+  font-family: 'chaparral-pro', serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.1;
+  margin: 0.75rem 0.75rem 1.5rem;
 }
 
 p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'chaparral-pro', serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.1;
+  margin: 0.1rem 0.1rem 0.5rem;
   color: #2f4858;
 }
 
@@ -160,7 +169,12 @@ a {
   text-decoration: none;
   color: #000000;
   position: relative;
-  font-size: large;
+
+  font-family: chaparral-pro, serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.1;
+  margin: 0.75rem 0.75rem 1.5rem;
 }
 
 a:hover {

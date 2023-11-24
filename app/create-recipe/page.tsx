@@ -30,7 +30,7 @@ export default async function InputPage() {
 
   return (
     <div className={styles.inputPage}>
-      <h1 className={styles.recipeTitle}>Create your own recipe</h1>
+      <h1 className={styles.heading}>Create your own recipe</h1>
       <div className={styles.inputCard}>
         <div className={styles.createInputForm}>
           <CreateInputForm userId={user.id} />
@@ -58,7 +58,7 @@ export default async function InputPage() {
 
       <div className={styles.relatedContent}>
         <a href="/recipes" className={styles.link}>
-          <section className={styles.discoverSection}>
+          <section className={styles.discoverSection2}>
             <p className={styles.relatedText}>
               Explore more recipes and cooking tips on our Recipes Page .
             </p>

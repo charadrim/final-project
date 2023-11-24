@@ -79,24 +79,26 @@ export default function RootLayout({
       <div>
         <body>
           <div>
-            <nav className={styles.navContainer}>
-              <div className={styles.logoContainer}>
-                <Logo />
-              </div>
-              <nav className={styles.fixedNav}>
-                <div className={styles.divLinks}>
-                  {/* <Link href="/">Home</Link> */}
-                  <Link href="/recipes">Recipes</Link>
-                  <Link href="/create-recipe">Create Recipe</Link>
-                  <Link href="/myaccount">My Account</Link>
+            <div className={styles.navigationBar}>
+              <nav className={styles.navContainer}>
+                <div className={styles.logoContainer}>
+                  <Logo />
                 </div>
-              </nav>{' '}
-              <div className={styles.leftLinks}>
-                <div className={styles.hamburgerBtn}>
-                  <HamburgerButtonClient />
+                <nav className={styles.fixedNav}>
+                  <div className={styles.divLinks}>
+                    {/* <Link href="/">Home</Link> */}
+                    <Link href="/recipes">Recipes</Link>
+                    <Link href="/create-recipe">Create Recipe</Link>
+                    <Link href="/myaccount">My Account</Link>
+                  </div>
+                </nav>{' '}
+                <div className={styles.leftLinks}>
+                  <div className={styles.hamburgerBtn}>
+                    <HamburgerButtonClient />
+                  </div>
                 </div>
-              </div>
-            </nav>
+              </nav>
+            </div>
           </div>
           <div>{children}</div>
         </body>

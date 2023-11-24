@@ -10,7 +10,6 @@ export default function Home() {
           <Image
             src="/images/doodlyveggies.jpg"
             alt="Healthy Meals"
-            layout="intrinsic"
             width={1920}
             height={480}
           />
@@ -21,11 +20,6 @@ export default function Home() {
               <Link href="/recipes">
                 <button className={styles.heroButton1}>
                   Discover New Recipes
-                </button>
-              </Link>
-              <Link href="/create-recipe">
-                <button className={styles.heroButton2}>
-                  Create Your Own Recipe
                 </button>
               </Link>
             </div>

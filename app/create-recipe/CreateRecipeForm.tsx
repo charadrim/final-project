@@ -55,7 +55,7 @@ export default function CreateInputForm({ userId }: { userId: number }) {
       }}
     >
       <label>
-        Add Description:
+        <div className={styles.recipeInputTitle}>Add Description:</div>
         <br />
         <input
           value={description}
@@ -66,7 +66,7 @@ export default function CreateInputForm({ userId }: { userId: number }) {
       <br />
 
       <label>
-        Ingredients:
+        <div className={styles.recipeInputTitle}>Ingredients:</div>
         <br />
         {/* <input
           value={ingredients.join(',')}
@@ -85,7 +85,7 @@ export default function CreateInputForm({ userId }: { userId: number }) {
       <br />
 
       <label>
-        Instructions:
+        <div className={styles.recipeInputTitle}>Instructions:</div>
         <br />
         {/* <input
           value={instructions.join('\n')}

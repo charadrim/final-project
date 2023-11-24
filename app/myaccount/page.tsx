@@ -4,33 +4,37 @@ import styles from '../page.module.css';
 
 export default function MyAccount() {
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        <h1 className={styles.title}>My Account</h1>
-        <p className={styles.description}>
-          Welcome to your NutriVerse account! Explore the features and manage
-          your recipes here.
-        </p>
-        <div className={styles.featureList}>
-          <div className={styles.featureItem}>
-            <h2>Your Recipes</h2>
-            <p>View and manage your saved recipes.</p>
-            <Link href="/recipes">Go to Recipes</Link>
+    <div>
+      <h1 className={styles.heading}>My Account</h1>
+      <p className={styles.description}>
+        Welcome to your NutriVerse account! Explore the features and manage your
+        recipes here.
+      </p>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <div className={styles.featureList}>
+            <div className={styles.featureItem}>
+              <h2>Your Recipes</h2>
+              <p>View and manage your saved recipes.</p>
+              <Link href="/recipes">Go to Recipes</Link>
+            </div>
+            <div className={styles.featureItem}>
+              <h2>Create Recipe</h2>
+              <p>
+                Share your culinary creations with the NutriVerse community.
+              </p>
+              <Link href="/create-recipe">Create a Recipe</Link>
+            </div>
+            {/* Add more features as needed */}
           </div>
-          <div className={styles.featureItem}>
-            <h2>Create Recipe</h2>
-            <p>Share your culinary creations with the NutriVerse community.</p>
-            <Link href="/create-recipe">Create a Recipe</Link>
-          </div>
-          {/* Add more features as needed */}
         </div>
-      </div>
-      {/* <div className={styles.calendarCard}>
+        {/* <div className={styles.calendarCard}>
         <h2 className={styles.calendarTitle}>My Calendar</h2>
         <div className={styles.calendarContainer}>
           <MyCalendar />
         </div>
       </div> */}
+      </div>
     </div>
   );
 }
