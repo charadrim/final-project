@@ -10,13 +10,25 @@ export default function Home() {
           <Image
             src="/images/doodlyveggies.jpg"
             alt="Healthy Meals"
-            layout="fixed"
+            layout="intrinsic"
             width={1920}
-            height={1080}
+            height={480}
           />
           <div className={styles.heroText}>
             <h1>Welcome to NutriVerse</h1>
             <p>Your Culinary Journey Begins Here</p>
+            <div className={styles.heroCTAs}>
+              <Link href="/recipes">
+                <button className={styles.heroButton1}>
+                  Discover New Recipes
+                </button>
+              </Link>
+              <Link href="/create-recipe">
+                <button className={styles.heroButton2}>
+                  Create Your Own Recipe
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -43,11 +55,11 @@ export default function Home() {
           </p>
         </section>
 
-        {/* Footer Section */}
+        {/* Footer Section
         <footer className={styles.footer}>
           {/* Add content for the footer */}
-          <p>&copy; 2023 NutriVerse. All rights reserved.</p>
-        </footer>
+        {/* <p>&copy; 2023 NutriVerse. All rights reserved.</p>
+        </footer> */}
       </div>
     </main>
   );

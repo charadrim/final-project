@@ -1,6 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import styles from '../page.module.css';
 
 export default function CreateInputForm({ userId }: { userId: number }) {
   const [description, setDescription] = useState('');
@@ -55,8 +56,10 @@ export default function CreateInputForm({ userId }: { userId: number }) {
     >
       <label>
         Add Description:
+        <br />
         <input
           value={description}
+          className={styles.inputField}
           onChange={(event) => setDescription(event.currentTarget.value)}
         />
       </label>
@@ -64,6 +67,7 @@ export default function CreateInputForm({ userId }: { userId: number }) {
 
       <label>
         Ingredients:
+        <br />
         {/* <input
           value={ingredients.join(',')}
           onChange={(event) =>
@@ -72,6 +76,7 @@ export default function CreateInputForm({ userId }: { userId: number }) {
         /> */}
         <textarea
           value={ingredients.join('\n')}
+          className={styles.inputField}
           onChange={(event) =>
             setIngredients(event.currentTarget.value.split('\n'))
           }
@@ -81,6 +86,7 @@ export default function CreateInputForm({ userId }: { userId: number }) {
 
       <label>
         Instructions:
+        <br />
         {/* <input
           value={instructions.join('\n')}
           onChange={(event) =>
@@ -89,6 +95,7 @@ export default function CreateInputForm({ userId }: { userId: number }) {
         /> */}
         <textarea
           value={instructions.join('\n')}
+          className={styles.inputField}
           onChange={(event) =>
             setInstructions(event.currentTarget.value.split('\n'))
           }
@@ -96,7 +103,7 @@ export default function CreateInputForm({ userId }: { userId: number }) {
       </label>
       <br />
 
-      <button>Create +</button>
+      <button className={styles.createButton}>Create +</button>
     </form>
   );
 }

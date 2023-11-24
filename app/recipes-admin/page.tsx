@@ -2,7 +2,9 @@ import '../page.module.css';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { getValidSessionByToken } from '../../database/sessions';
-import { MyRecipes } from './MyRecipes';
+import AdminPage from './AdminPage';
+
+// import { MyRecipes } from './MyRecipes';
 
 export const metadata = {
   title: 'Admin page',
@@ -25,5 +27,9 @@ export default async function RecipesAdmin({}: Props) {
 
   // const animals = await getAnimals();
 
-  return <div>{/* <MyRecipes /> */}lalalla</div>;
+  return (
+    <div>
+      <AdminPage />
+    </div>
+  );
 }

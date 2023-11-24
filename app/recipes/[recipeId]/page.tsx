@@ -27,21 +27,25 @@ export default function RecipePage(props: GenerateMetadataProps) {
   return (
     <div className={styles.main}>
       <div className={styles.singleRecipeBox}>
-        <a>
+        <div>
           <div className={styles.singleRecipeContainer}>
-            <Image
-              src={`/images/${singleRecipe.image}.jpg`}
-              alt={singleRecipe.title}
-              width={500}
-              height={500}
-              data-test-id="recipe-image"
-            />
-            <h1>{singleRecipe.title}</h1>
-            <p>Description: {singleRecipe.description}</p>
-            <p>Ingredients: {singleRecipe.ingredients}</p>
-            <p>Instructions: {singleRecipe.instructions}</p>
+            <div className={styles.singleRecipeCard}>
+              <Image
+                src={`/images/${singleRecipe.image}.jpg`}
+                alt={singleRecipe.title}
+                width={500}
+                height={500}
+                data-test-id="recipe-image"
+              />
+            </div>
+            <div>
+              <h1>{singleRecipe.title}</h1>
+              <p>Description: {singleRecipe.description}</p>
+              <p>Ingredients: {singleRecipe.ingredients}</p>
+              <p>Instructions: {singleRecipe.instructions}</p>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   );

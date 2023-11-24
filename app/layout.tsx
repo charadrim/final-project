@@ -51,6 +51,7 @@ import './globals.scss';
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import Footer from './components/Footer';
 // import LogoutButton from './(auth)/logout/LogoutButton';
 // import HamburgerButtonClient from './components/HamburgerButtonClient';
 import Logo from './components/Logo';
@@ -75,35 +76,37 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <nav className={styles.navContainer}>
-          <div className={styles.logoContainer}>
-            <Logo />
-          </div>
-          <nav className={styles.fixedNav}>
-            <div>
-              <div className={styles.divLinks}>
-                <Link href="/">Home</Link>
-                <Link href="/recipes">Recipes</Link>
-                <Link href="/create-recipe">Create Recipe</Link>
-                <Link href="/myaccount">My Account</Link>
+      <div>
+        <body>
+          <div>
+            <nav className={styles.navContainer}>
+              <div className={styles.logoContainer}>
+                <Logo />
               </div>
-            </div>
-          </nav>{' '}
-          <div className={styles.leftLinks}>
-            <HamburgerButtonClient className={styles.hamburgerBtn} />
+              <nav className={styles.fixedNav}>
+                <div className={styles.divLinks}>
+                  {/* <Link href="/">Home</Link> */}
+                  <Link href="/recipes">Recipes</Link>
+                  <Link href="/create-recipe">Create Recipe</Link>
+                  <Link href="/myaccount">My Account</Link>
+                </div>
+              </nav>{' '}
+              <div className={styles.leftLinks}>
+                <div className={styles.hamburgerBtn}>
+                  <HamburgerButtonClient />
+                </div>
+              </div>
+            </nav>
           </div>
-          {/* {showLinks && (
-            <div className={styles.mobileLinks}>
-              <Link href="/login">Login</Link>
-              <Link href="/register">Register</Link>
-              <Link href="/recipes-admin">Admin</Link>
-              <LogoutButton />
-            </div>
-          )} */}
-        </nav>
-        <div>{children}</div>
-      </body>
+          <div>{children}</div>
+        </body>
+
+        {/* <footer className={styles.footer}>
+
+          <p>&copy; 2023 NutriVerse. All rights reserved.</p>
+        </footer> */}
+        <Footer />
+      </div>
     </html>
   );
 }

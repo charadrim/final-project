@@ -27,14 +27,16 @@ export default async function RecipePage() {
           >
             <div className={styles.recipeBox}>
               <Link href={`/recipes/${recipe.id}`}>
-                <Image
-                  src={`/images/${recipe.image}.jpg`}
-                  alt={recipe.title}
-                  width={200}
-                  height={200}
-                />
-                <br />
-                {recipe.title}
+                <div className={styles.recipeImage}>
+                  <Image
+                    src={`/images/${recipe.image}.jpg`}
+                    alt={recipe.title}
+                    width={200}
+                    height={200}
+                  />
+                  <br />
+                </div>
+                <div className={styles.recipeTitle}>{recipe.title}</div>
               </Link>
             </div>
           </div>

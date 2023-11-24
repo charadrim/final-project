@@ -112,7 +112,8 @@
 // }
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
-
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
 *,
 ::before,
 ::after {
@@ -131,14 +132,28 @@
 
 body {
   margin: 0;
-  background-color: #f6faff;
+  background-color: #f9f9f9;
   padding: 16px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: #2f4858;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  color: #2f4858;
 }
 
 a {
@@ -149,7 +164,7 @@ a {
 }
 
 a:hover {
-  color: #3498db;
+  color: #00aa9d;
 }
 
 /* Add subtle hover effects to elements */
@@ -177,7 +192,7 @@ img {
 
 /* Style buttons for a clean look */
 .button {
-  background-color: #3498db;
+  background-color: #00aa9d;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -194,6 +209,6 @@ section {
 
 /* Implement a dark mode toggle */
 body.dark-mode {
-  background-color: #333;
+  background-color: #0b0b0b;
   color: #fff;
 }
