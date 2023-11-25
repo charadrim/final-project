@@ -18,7 +18,9 @@ export default async function RecipePage() {
 
   return (
     <div className={styles.main}>
-      <h1 className={styles.heading}>Healthy Recipes for Hashimoto's</h1>
+      <div className={styles.pageTitle}>
+        <h1 className={styles.heading}>Healthy Recipes for Hashimoto's</h1>
+      </div>
       <div className={styles.recipeContainer}>
         {modifiedRecipes.map((recipe) => (
           <div

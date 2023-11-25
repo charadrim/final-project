@@ -20,7 +20,7 @@
     "fullcalendar": "^6.1.9",
     "migrate": "^2.0.0",
     "moment": "^2.29.4",
-    "next": "13.5.6",
+    "next": "14.0.3",
     "pg": "^8.11.3",
     "postgres": "^3.4.1",
     "prop-types": "^15.8.1",
@@ -34,7 +34,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^20.10.0",
     "@types/react": "^18",
     "@types/react-big-calendar": "^1.8.3",
     "@types/react-dom": "^18",

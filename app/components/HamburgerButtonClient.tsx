@@ -20,10 +20,12 @@ export default function HamburgerButtonClient() {
       </div>
       {showLinks && (
         <div className={styles.mobileLinks}>
-          <Link href="/login">Login</Link>
-          <Link href="/register">Register</Link>
-          <Link href="/recipes-admin">Admin</Link>
-          <LogoutButton />
+          <div className={styles.mobileLinksMenu}>
+            <Link href="/login">Login</Link>
+            <Link href="/register">Register</Link>
+            <Link href="/recipes-admin">Admin</Link>
+            <LogoutButton />
+          </div>
         </div>
       )}
     </>

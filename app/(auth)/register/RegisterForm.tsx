@@ -36,59 +36,71 @@ export default function RegisterForm() {
     }
 
     router.push(`/profile/${data.user.username}`);
+    router.refresh();
 
     // console.log('Check: ', data);
   }
 
   return (
     <div>
-      <h1 className={styles.heading}>Register</h1>
-      <div className={styles.container}>
-        <form onSubmit={async (event) => await handleRegister(event)}>
-          <label>
-            {' '}
-            Email:
-            <input
-              className={styles.inputField}
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(event) => setEmail(event.currentTarget.value)}
-            />
-          </label>
-          <br />
-          <label>
-            {' '}
-            Username:
-            <input
-              className={styles.inputField}
-              type="username"
-              placeholder="Username"
-              value={username}
-              onChange={(event) => setUsername(event.currentTarget.value)}
-            />
-          </label>
-          <br />
+      <div className={styles.authBackground}>
+        <div className={styles.authCard}>
+          <div className={styles.authPageTitle}>
+            <h1 className={styles.heading}>Register</h1>
+          </div>
+          <div className={styles.containerAuth}>
+            <form onSubmit={async (event) => await handleRegister(event)}>
+              <div>
+                <label>
+                  <div className={styles.authTextStyling}>Email</div>
+                  <input
+                    className={styles.inputField}
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(event) => setEmail(event.currentTarget.value)}
+                  />
+                </label>
+              </div>
+              <br />
+              <div>
+                <label>
+                  <div className={styles.authTextStyling}>Username</div>
+                  <input
+                    className={styles.inputField}
+                    type="username"
+                    placeholder="Username"
+                    value={username}
+                    onChange={(event) => setUsername(event.currentTarget.value)}
+                  />
+                </label>
+              </div>
+              <br />
 
-          <label>
-            {' '}
-            Password:
-            <input
-              className={styles.inputField}
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(event) => setPassword(event.currentTarget.value)}
-            />
-          </label>
-          <br />
-          <button className={styles.submitButton}>Register</button>
-          {errors.map((error) => (
-            <div className="error" key={`error-${error.message}`}>
-              Error: {error.message}
-            </div>
-          ))}
-        </form>
+              <div>
+                <label>
+                  <div className={styles.authTextStyling}>Password</div>
+                  <input
+                    className={styles.inputField}
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(event) => setPassword(event.currentTarget.value)}
+                  />
+                </label>
+              </div>
+              <br />
+              <div>
+                <button className={styles.submitButton}>Register</button>
+              </div>
+              {errors.map((error) => (
+                <div className="error" key={`error-${error.message}`}>
+                  Error: {error.message}
+                </div>
+              ))}
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   );

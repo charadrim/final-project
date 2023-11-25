@@ -1,15 +1,19 @@
 import Link from 'next/link';
-import MyCalendar from '../components/MyCalendar';
+// import MyCalendar from '../components/MyCalendar';
 import styles from '../page.module.css';
 
 export default function MyAccount() {
   return (
     <div>
-      <h1 className={styles.heading}>My Account</h1>
-      <p className={styles.description}>
-        Welcome to your NutriVerse account! Explore the features and manage your
-        recipes here.
-      </p>
+      <div className={styles.authPageTitle}>
+        <h1 className={styles.heading}>My Account</h1>
+        <div className={styles.description}>
+          <p>
+            Welcome to your NutriVerse account! Explore the features and manage
+            your recipes here.
+          </p>
+        </div>
+      </div>
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.featureList}>

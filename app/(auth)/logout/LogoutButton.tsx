@@ -26,10 +26,13 @@ export default function LogoutButton() {
     await logout();
     router.push('/');
   };
-
   return (
-    <form action="/logout" method="post">
-      <button className={styles.logoutButton} onClick={handleLogout}>
+    <form>
+      <button
+        className={styles.logoutButton}
+        formAction={logout}
+        onClick={handleLogout}
+      >
         Logout
       </button>
     </form>

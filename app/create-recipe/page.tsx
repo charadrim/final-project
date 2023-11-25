@@ -1,4 +1,5 @@
 import { cookies } from 'next/headers';
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import {
   getUserBySessionToken,
@@ -30,7 +31,9 @@ export default async function InputPage() {
 
   return (
     <div className={styles.inputPage}>
-      <h1 className={styles.heading}>Create your own recipe</h1>
+      <div className={styles.pageTitle}>
+        <h1 className={styles.heading}>Create your own recipe</h1>
+      </div>
       <div className={styles.inputCard}>
         <div className={styles.createInputForm}>
           <CreateInputForm userId={user.id} />
@@ -56,14 +59,17 @@ export default async function InputPage() {
         )}
       </div>
 
-      <div className={styles.relatedContent}>
-        <a href="/recipes" className={styles.link}>
-          <section className={styles.discoverSection2}>
-            <p className={styles.relatedText}>
-              Explore more recipes and cooking tips on our Recipes Page .
-            </p>
-          </section>
-        </a>
+      <div className={styles.container}>
+        <section className={styles.discoverSection}>
+          <Link href="/recipes">
+            <div>
+              <h2>Get inspiration</h2>
+
+              {/* Add content specific to this section */}
+              <p>Explore more recipes and cooking tips on our Recipes Page.</p>
+            </div>
+          </Link>
+        </section>
       </div>
     </div>
   );

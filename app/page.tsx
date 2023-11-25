@@ -16,12 +16,8 @@ export default function Home() {
           <div className={styles.heroText}>
             <h1>Welcome to NutriVerse</h1>
             <p>Your Culinary Journey Begins Here</p>
-            <div className={styles.heroCTAs}>
-              <Link href="/recipes">
-                <button className={styles.heroButton1}>
-                  Discover New Recipes
-                </button>
-              </Link>
+            <div className={styles.heroButton1}>
+              <Link href="/recipes">Discover New Recipes</Link>
             </div>
           </div>
         </div>
@@ -31,22 +27,28 @@ export default function Home() {
         {/* Section 1: Discover New Recipes */}
         <section className={styles.discoverSection}>
           <Link href="/recipes">
-            <h2>Discover New Recipes</h2>
+            <div>
+              <h2>Discover New Recipes</h2>
+
+              {/* Add content specific to this section */}
+              <p>Explore a world of delicious recipes curated just for you!</p>
+            </div>
           </Link>
-          {/* Add content specific to this section */}
-          <p>Explore a world of delicious recipes curated just for you!</p>
         </section>
 
         {/* Section 2: Create Your Own Recipe */}
         <section className={styles.createSection}>
           <Link href="/create-recipe">
-            <h2>Create Your Own Recipe</h2>
+            <div>
+              <h2>Create Your Own Recipe</h2>
+
+              {/* Add content specific to this section */}
+              <p>
+                Unleash your creativity in the kitchen and share your unique
+                recipes with the community.
+              </p>
+            </div>
           </Link>
-          {/* Add content specific to this section */}
-          <p>
-            Unleash your creativity in the kitchen and share your unique recipes
-            with the community.
-          </p>
         </section>
 
         {/* Footer Section

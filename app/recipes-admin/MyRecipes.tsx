@@ -1,7 +1,7 @@
-'use client';
-import { useState } from 'react';
-import { Recipe } from '../../migrations/00002-createTableRecipes';
+// 'use client';
+// import { useState } from 'react';
+// import { Recipe } from '../../migrations/00002-createTableRecipes';
 
-type Props = {
-  recipes: Recipe[];
-};
+// type Props = {
+//   recipes: Recipe[];
+// };

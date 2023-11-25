@@ -156,7 +156,9 @@ h6 {
   margin: 0.75rem 0.75rem 1.5rem;
 }
 
-p {
+p,
+ul,
+ol {
   font-family: 'chaparral-pro', serif;
   font-size: 1rem;
   font-weight: normal;
@@ -178,7 +180,7 @@ a {
 }
 
 a:hover {
-  color: #00aa9d;
+  color: #4caf50;
 }
 
 /* Add subtle hover effects to elements */
