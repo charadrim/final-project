@@ -1,1 +1,1 @@
-export { default } from 'eslint-config-upleveled';
+module.exports = require('eslint-config-upleveled');

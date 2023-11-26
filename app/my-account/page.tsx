@@ -14,7 +14,7 @@ export default function MyAccount() {
           </p>
         </div>
       </div>
-      <div className={styles.container}>
+      <div className={styles.container2}>
         <div className={styles.content}>
           <div className={styles.featureList}>
             <div className={styles.featureItem}>

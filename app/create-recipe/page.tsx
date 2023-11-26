@@ -29,28 +29,32 @@ export default async function InputPage() {
 
   return (
     <div className={styles.main}>
+      <div >
       <div className={styles.createRecipeBox}>
         <div className={styles.createRecipeContainer}>
-          <div className={styles.createRecipeCardBackground}>
-            <div className={styles.createRecipeCard}>
-              <div className={styles.pageTitle}>
-                <h1 className={styles.heading}>Create your own recipe</h1>
+            <div className={styles.createRecipeCardBackground}>
+             <div className={styles.createRecipeCard}>
+               <div className={styles.pageTitle}>
+                 <h1 className={styles.heading}>Create your own recipe</h1>
               </div>
 
               <div className={styles.createInputForm}>
                 <CreateRecipeForm userId={user.id} />
               </div>
             </div>
-          </div>
-          <div className={styles.createInfoBackground}>
+          </div></div>
+
+
+
+        </div><div className={styles.createRecipeContainer1}><div className={styles.createRecipeCardBackground1}>
             <div className={styles.createRecipeInfo}>
-              <div className={styles.createRecipeInfoBox}>
+              <div className={styles.createRecipeInfo}>
                 {allUserRecipes.length > 0 ? (
                   <>
                     <h2 className={styles.createRecipeTitle}>
                       Recipes By {user.username}
                     </h2>
-                    <ul className={styles.recipeUl}>
+                    <ul className={styles.recipeUl1}>
                       {allUserRecipes.map((input) => (
                         <li key={`recipe-div-${input.userId}`}>
                           <div>{input.title}</div>
@@ -67,10 +71,10 @@ export default async function InputPage() {
               </div>
             </div>
           </div>
-        </div>
+          </div>
 
         <div>
-          <div className={styles.createRecipeContainer1}>
+          <div className={styles.createRecipeContainer2}>
             <section className={styles.discoverSection}>
               <Link href="/recipes">
                 <div>
@@ -86,7 +90,7 @@ export default async function InputPage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
   );
 }
 

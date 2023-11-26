@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import styles from '../page.module.css';
 
@@ -26,7 +27,9 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="fab fa-facebook"> </i>
+              <Image src="/images/fb.png" alt="Facebook Logo" width={24}
+            height={24}/>
+
             </a>
           </li>
           <li>
@@ -35,7 +38,8 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="fab fa-twitter"> </i>
+              <Image src="/images/twitter.png" alt="Twitter Logo" width={24}
+            height={24}/>
             </a>
           </li>
           <li>
@@ -44,7 +48,9 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="fab fa-instagram"> </i>
+              <Image src="/images/ig.png" alt="Instagram Logo" width={24}
+            height={24}/>
+
             </a>
           </li>
         </ul>

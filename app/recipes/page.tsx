@@ -21,6 +21,7 @@ export default async function RecipePage() {
       <div className={styles.pageTitle}>
         <h1 className={styles.heading}>Healthy Recipes for Hashimoto's</h1>
       </div>
+      <div className={styles.recipeBackground}>
       <div className={styles.recipeContainer}>
         {modifiedRecipes.map((recipe) => (
           <div
@@ -41,9 +42,23 @@ export default async function RecipePage() {
                 <div className={styles.recipeTitle}>{recipe.title}</div>
               </Link>
             </div>
+
           </div>
         ))}
+
       </div>
+      <div>
+      <div className={styles.createYourOwn}>
+        <section className={styles.discoverSection3}>
+          <Link href="/create-recipe">
+            <div>
+              <h2>Create Your Own Recipe</h2>
+            </div>
+          </Link>
+        </section>
+        </div>
+        </div>
+    </div>
     </div>
   );
 }

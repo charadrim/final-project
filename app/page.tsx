@@ -73,21 +73,21 @@ export default function Home() {
         <div className={styles.infoBackground}>
           <section className={styles.infoSection}>
             <div className={styles.infoSectionText}>
-              <div className={styles.infoBlocks}>
+              <div className={styles.infoBlocks2}>
                 <h2>Your Thyroid Health Matters:</h2>
                 <p>
-                  At ThyroDelight, we believe eating well should never be a
+                  At NutriVerse, we believe eating well should never be a
                   compromise. Join us in creating a vibrant community of
                   individuals dedicated to wellness through mindful and
                   delightful cooking.
                 </p>
               </div>
-              <div className={styles.infoBlocks}>
+              <div className={styles.infoBlocks2}>
                 <h2>Start Your NutriVerse Journey Today:</h2>
                 <ul>
-                  <li>[Explore Recipes]</li>
-                  <li>[Create Your Profile]</li>
-                  <li>[Share Your Recipe]</li>
+                <Link href="/recipes"><li>[Explore Recipes]</li></Link>
+                <Link href="/register"><li>[Create Your Profile]</li></Link>
+                <Link href="/create-recipe"><li>[Share Your Recipe]</li></Link>
                 </ul>
               </div>
             </div>
@@ -104,27 +104,27 @@ export default function Home() {
           </section>
         </div>
       </div>
-
+  <div className={styles.containerBackground}>
       <div className={styles.container1}>
-        {/* Section 1: Discover New Recipes */}
+
         <section className={styles.discoverSection}>
           <Link href="/recipes">
             <div>
               <h2>Discover New Recipes</h2>
 
-              {/* Add content specific to this section */}
+
               <p>Explore a world of delicious recipes curated just for you!</p>
             </div>
           </Link>
         </section>
 
-        {/* Section 2: Create Your Own Recipe */}
+
         <section className={styles.createSection}>
           <Link href="/create-recipe">
             <div>
               <h2>Create Your Own Recipe</h2>
 
-              {/* Add content specific to this section */}
+
               <p>
                 Unleash your creativity in the kitchen and share your unique
                 recipes with the community.
@@ -133,12 +133,8 @@ export default function Home() {
           </Link>
         </section>
 
-        {/* Footer Section
-        <footer className={styles.footer}>
-          {/* Add content for the footer */}
-        {/* <p>&copy; 2023 NutriVerse. All rights reserved.</p>
-        </footer> */}
-      </div>
+
+      </div></div>
     </main>
   );
 }

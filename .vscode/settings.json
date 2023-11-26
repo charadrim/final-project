@@ -9,5 +9,8 @@
     "javascript",
     "typescriptreact"
   ],
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "cSpell.words": [
+    "Nutri"
+  ]
 }
