@@ -11,7 +11,7 @@ export default function MyAccount({ params }: Props) {
   return (
     <div>
       <div>
-        <div className={styles.authPageTitle}>
+        <div className={styles.pageTitle}>
           <h1 className={styles.heading}>My Account</h1>
           <div className={styles.description}>
             <p>

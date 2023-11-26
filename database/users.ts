@@ -6,8 +6,9 @@ export type UserWithPasswordHash = User & {
   passwordHash: string;
 };
 
-export type UserInput = {
-  inputId: number;
+export type Input = {
+  userId: number;
+  title: string;
   description: string;
   ingredients: string[];
   instructions: string[];
@@ -75,9 +76,10 @@ export const getUserBySessionToken = cache(async (token: string) => {
 });
 
 export const getUserInputBySessionToken = cache(async (token: string) => {
-  const input = await sql<UserInput[]>`
+  const input = await sql<Input[]>`
     SELECT
       input.id AS input_id,
+      input.title AS title,
       input.description AS description,
       input.ingredients AS ingredients,
       input.instructions AS instructions,
@@ -90,6 +92,24 @@ export const getUserInputBySessionToken = cache(async (token: string) => {
         AND sessions.user_id = users.id
         AND sessions.expiry_timestamp > now ()
       )
+  `;
+  return input;
+});
+
+export const getAllUserRecipes = cache(async () => {
+  const input = await sql<Input[]>`
+    SELECT
+      input.id AS input_id,
+      input.title AS title,
+      input.description AS description,
+      input.ingredients AS ingredients,
+      input.instructions AS instructions,
+      users.username AS username
+    FROM
+      input
+      INNER JOIN users ON input.user_id = users.id
+
+
   `;
   return input;
 });

@@ -1,9 +1,10 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styles from '../page.module.css';
 
 export default function CreateInputForm({ userId }: { userId: number }) {
+  const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [ingredients, setIngredients] = useState<string[]>([]);
   const [instructions, setInstructions] = useState<string[]>([]);
@@ -14,6 +15,7 @@ export default function CreateInputForm({ userId }: { userId: number }) {
     await fetch('/api/input', {
       method: 'POST',
       body: JSON.stringify({
+        title,
         description,
         ingredients,
         instructions,
@@ -21,9 +23,10 @@ export default function CreateInputForm({ userId }: { userId: number }) {
       }),
     });
     router.refresh();
+    setTitle('');
     setDescription('');
-    setIngredients([]);
-    setInstructions([]);
+    setIngredients(['']);
+    setInstructions(['']);
   }
 
   //   return (
@@ -54,6 +57,15 @@ export default function CreateInputForm({ userId }: { userId: number }) {
         await handleCreateInput();
       }}
     >
+      <label>
+        <div className={styles.recipeInputTitle}>Add Title:</div>
+        <br />
+        <input
+          value={title}
+          className={styles.inputField}
+          onChange={(event) => setTitle(event.currentTarget.value)}
+        />
+      </label>
       <label>
         <div className={styles.recipeInputTitle}>Add Description:</div>
         <br />
@@ -103,7 +115,7 @@ export default function CreateInputForm({ userId }: { userId: number }) {
       </label>
       <br />
 
-      <button className={styles.createButton}>Create +</button>
+      <button className={styles.createButton}>Create</button>
     </form>
   );
 }

@@ -5,6 +5,7 @@ import { sql } from './connect';
 export const createInput = cache(
   async (
     userId: number,
+    title: string,
     description: string,
     ingredients: string[],
     instructions: string[],
@@ -13,6 +14,7 @@ export const createInput = cache(
     INSERT INTO
       input (
         user_id,
+        title,
         description,
         ingredients,
         instructions
@@ -20,9 +22,10 @@ export const createInput = cache(
     VALUES
       (
         ${userId},
+        ${title},
         ${description},
-        ARRAY${ingredients},
-        ARRAY${instructions}
+        ${ingredients},
+        ${instructions}
       ) RETURNING *
   `;
 

@@ -3,6 +3,7 @@ import { Sql } from 'postgres';
 export type Input = {
   id: number;
   userId: number;
+  title: string;
   description: string;
   ingredients: string[];
   instructions: string[];
@@ -13,7 +14,7 @@ export async function up(sql: Sql) {
     CREATE TABLE input (
         id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
         user_id INTEGER NOT NULL REFERENCES users (id) ON DELETE CASCADE,
-        image VARCHAR(100) NOT NULL,
+        title VARCHAR(300) NOT NULL,
         description text NOT NULL,
         ingredients text[] NOT NULL,
         instructions text[] NOT NULL

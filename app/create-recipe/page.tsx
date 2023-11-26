@@ -1,12 +1,10 @@
 import { cookies } from 'next/headers';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import {
-  getUserBySessionToken,
-  getUserInputBySessionToken,
-} from '../../database/users';
+import React from 'react';
+import { getAllUserRecipes, getUserBySessionToken } from '../../database/users';
 import styles from '../page.module.css';
-import CreateInputForm from './CreateRecipeForm';
+import CreateRecipeForm from './CreateRecipeForm';
 
 export default async function InputPage() {
   // Task: Restrict access to the notes page and only display notes belonging to the current logged in user
@@ -25,51 +23,68 @@ export default async function InputPage() {
   if (!user) redirect('/login?returnTo=/create-recipe');
 
   // Display the notes for the current logged in user
-  const userInput = await getUserInputBySessionToken(sessionTokenCookie.value);
+  const allUserRecipes = await getAllUserRecipes();
 
-  console.log('Checking: ', userInput);
+  // console.log('Checking: ', userInput);
 
   return (
-    <div className={styles.inputPage}>
-      <div className={styles.pageTitle}>
-        <h1 className={styles.heading}>Create your own recipe</h1>
-      </div>
-      <div className={styles.inputCard}>
-        <div className={styles.createInputForm}>
-          <CreateInputForm userId={user.id} />
-        </div>
-      </div>
-      <div className={styles.recipeList}>
-        {userInput.length > 0 ? (
-          <>
-            <h2 className={styles.recipeTitle}>Recipe For {user.username}</h2>
-            <ul className={styles.recipeUl}>
-              {userInput.map((input) => (
-                <li
-                  key={`recipe-div-${input.inputId}`}
-                  className={styles.recipeLi}
-                >
-                  {input.description}
-                </li>
-              ))}
-            </ul>
-          </>
-        ) : (
-          <h2 className={styles.noRecipes}> No recipes yet</h2>
-        )}
-      </div>
+    <div className={styles.main}>
+      <div className={styles.createRecipeBox}>
+        <div className={styles.createRecipeContainer}>
+          <div className={styles.createRecipeCardBackground}>
+            <div className={styles.createRecipeCard}>
+              <div className={styles.pageTitle}>
+                <h1 className={styles.heading}>Create your own recipe</h1>
+              </div>
 
-      <div className={styles.container}>
-        <section className={styles.discoverSection}>
-          <Link href="/recipes">
-            <div>
-              <h2>Get inspiration</h2>
-
-              {/* Add content specific to this section */}
-              <p>Explore more recipes and cooking tips on our Recipes Page.</p>
+              <div className={styles.createInputForm}>
+                <CreateRecipeForm userId={user.id} />
+              </div>
             </div>
-          </Link>
-        </section>
+          </div>
+          <div className={styles.createInfoBackground}>
+            <div className={styles.createRecipeInfo}>
+              <div className={styles.createRecipeInfoBox}>
+                {allUserRecipes.length > 0 ? (
+                  <>
+                    <h2 className={styles.createRecipeTitle}>
+                      Recipes By {user.username}
+                    </h2>
+                    <ul className={styles.recipeUl}>
+                      {allUserRecipes.map((input) => (
+                        <li key={`recipe-div-${input.userId}`}>
+                          <div>{input.title}</div>
+                          <div>{input.description}</div>
+                          <div>{input.ingredients}</div>
+                          <div>{input.instructions}</div>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <h2 className={styles.noRecipes}> No recipes yet</h2>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div className={styles.createRecipeContainer1}>
+            <section className={styles.discoverSection}>
+              <Link href="/recipes">
+                <div>
+                  <h2>Get inspiration</h2>
+
+                  {/* Add content specific to this section */}
+                  <p>
+                    Explore more recipes and cooking tips on our Recipes Page.
+                  </p>
+                </div>
+              </Link>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   );
